@@ -1,5 +1,5 @@
 import React from "react";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
 import * as C from "./styles";
 import { StatusBar } from "react-native";
@@ -17,25 +17,39 @@ export default function Settings() {
     },
   ];
 
+  const promotions = [
+    { key: 1, itemTitle: "Conta universitária" },
+    { key: 2, itemTitle: "Usar código promocional" },
+    {
+      key: 3,
+      itemTitle: "Convide seus amigos",
+    },
+  ];
+
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
 
       <C.Wrapper>
         <C.Container>
-          <C.Header>
-            <C.Title>Ajustes</C.Title>
-          </C.Header>
-
           <C.ContainerUser>
             <FontAwesome name="user-circle-o" size={85} color="#99C09D" />
             <C.UserEmail>@gustavo.jobstraibizer</C.UserEmail>
             <C.UserName>Gustavo Jobstraibizer</C.UserName>
 
-            <C.ProfileView>Ver meu perfil</C.ProfileView>
+            <C.ProfileViewContainer>
+              <C.ProfileView>Ver meu perfil</C.ProfileView>
+              <Ionicons
+                name="ios-arrow-forward"
+                size={18}
+                color="#56b970"
+                style={{ marginLeft: 2, alignSelf: "flex-end" }}
+              />
+            </C.ProfileViewContainer>
           </C.ContainerUser>
 
           <ListItems title={"Minha conta"} items={myAccount} />
+          <ListItems title={"Promoções"} items={promotions} />
         </C.Container>
       </C.Wrapper>
     </>

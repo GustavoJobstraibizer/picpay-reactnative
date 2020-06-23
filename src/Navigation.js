@@ -1,5 +1,8 @@
 import React from "react";
+import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 import PayButton from "./components/PayButton";
@@ -10,6 +13,7 @@ import PayScreen from "./screens/Pay";
 import SettingsScreen from "./screens/Settings";
 
 const Tab = createBottomTabNavigator();
+const Settings = createStackNavigator();
 
 const icons = {
   Home: {
@@ -29,6 +33,40 @@ const icons = {
     name: "setting",
   },
 };
+
+function SettingsStackScreen() {
+  return (
+    <Settings.Navigator>
+      <Settings.Screen
+        name="Settings"
+        options={{
+          title: "Ajustes",
+          headerStyle: {
+            backgroundColor: "#3b454c",
+            shadowColor: "transparent",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 20,
+          },
+          headerRight: () => (
+            <Text
+              style={{
+                color: "#54B170",
+                marginRight: 20,
+                fontSize: 22,
+              }}
+            >
+              Ajuda
+            </Text>
+          ),
+        }}
+        component={SettingsScreen}
+      />
+    </Settings.Navigator>
+  );
+}
 
 export default function Navigation() {
   return (
@@ -89,7 +127,7 @@ export default function Navigation() {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={SettingsStackScreen}
         options={{
           title: "Ajustes",
         }}

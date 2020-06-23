@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Wrapper = styled.SafeAreaView`
-  background: #3b454c;
+  background: #000;
   flex: 1;
 `;
 
@@ -42,7 +42,14 @@ export const UserName = styled.Text`
   margin-top: 5px;
 `;
 
+export const ProfileViewContainer = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+`;
+
 export const ProfileView = styled.Text`
   color: #56b970;
-  margin-top: 8px;
+  font-size: 16px;
 `;
