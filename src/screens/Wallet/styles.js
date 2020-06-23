@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 import { LinearGradient } from "expo-linear-gradient";
 
-export const Wrapper = styled.View`
+export const Wrapper = styled.ScrollView`
   background: #000;
-  flex: 1;
 `;
 
 export const Header = styled(LinearGradient)`
   height: 300px;
+  flex: 1;
 `;
 
 export const HeaderContainer = styled.SafeAreaView`
@@ -86,7 +86,7 @@ export const UseBalanceTitle = styled.Text`
   font-weight: 500;
 `;
 
-export const PaymentMethodContainer = styled.ScrollView``;
+export const PaymentMethodContainer = styled.View``;
 
 export const PaymentMethods = styled.View`
   margin-top: 25px;

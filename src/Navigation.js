@@ -7,6 +7,7 @@ import PayButton from "./components/PayButton";
 import HomeScreen from "./screens/Home";
 import WalletScreen from "./screens/Wallet";
 import PayScreen from "./screens/Pay";
+import SettingsScreen from "./screens/Settings";
 
 const Tab = createBottomTabNavigator();
 
@@ -88,7 +89,7 @@ export default function Navigation() {
       />
       <Tab.Screen
         name="Settings"
-        component={PayScreen}
+        component={SettingsScreen}
         options={{
           title: "Ajustes",
         }}
