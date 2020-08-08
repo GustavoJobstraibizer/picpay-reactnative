@@ -15,7 +15,7 @@
 
 ## Instalação
 
-```
+```bash
 1. Instale as dependências
 
 $ npm install
